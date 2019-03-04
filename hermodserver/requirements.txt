@@ -6,3 +6,4 @@ Click==7.0
 alembic==1.0.8
 SQLAlchemy==1.2.18
 WebTest==2.0.33
+python-dotenv
