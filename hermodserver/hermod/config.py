@@ -7,3 +7,15 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(BASE_DIR, 'hermod.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class TestConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+
+class DevConfig(Config):
+    ENV = 'dev'
+    DEBUG = True
+
+class ProdConfig(Config):
+    ENV = 'prod'
+    DEBUG = False

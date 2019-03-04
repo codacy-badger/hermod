@@ -1,5 +1,9 @@
 This is the server part of the Project Hermod.
 
+For the file .flaskenv to work is necessary to install:
+
+pip install python-dotenv
+
 ** DB commands
 
 Initialize db
