@@ -2,9 +2,13 @@
 sudo: false  # http://docs.travis-ci.com/user/migrating-from-legacy/
 language: python
 python:
+  - 2.7
+  - 3.4
+  - 3.5
   - 3.6
 install: pip install -r hermodserver/requirements.txt
 before_script:
-  - export FLASK_APP="$TRAVIS_BUILD_DIR/hermodserver.py"
+  - cd hermodserver
+  - export FLASK_APP="hermodserver.py"
   - export FLASK_DEBUG=1
 script: flask test

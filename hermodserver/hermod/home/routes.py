@@ -1,6 +1,8 @@
-from hermod.home import bp
+from flask import Blueprint
 
-@bp.route('/')
-@bp.route('/index')
+blueprint = Blueprint('home', __name__)
+
+@blueprint.route('/')
+@blueprint.route('/index')
 def index():
     return "Hello, World!"
