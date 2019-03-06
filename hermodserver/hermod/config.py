@@ -14,6 +14,8 @@ class Config(object):
 class TestConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    DEBUG = True
+    BCRYPT_LOG_ROUNDS = 4
 
 class DevConfig(Config):
     ENV = 'dev'

@@ -14,3 +14,4 @@ PyJWT
 Flask-JWT-Extended
 flask_bcrypt
 flask_apispec
+factory-boy
