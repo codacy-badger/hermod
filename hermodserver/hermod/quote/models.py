@@ -1,7 +1,8 @@
-from hermod.database import db, Column, Model
+# -*- coding: utf-8 -*-
 
-class Quote(Model):
-    id = Column(db.Integer, primary_key = True)
+from hermod.database import db, Column, Model,SurrogatePK
+
+class Quote(SurrogatePK,Model):
     author = Column(db.String(150),index=True)
     body = Column(db.Text)
 

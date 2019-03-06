@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """Extensions module. Each extension is initialized in the app factory located in app.py."""
+from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy, Model
 from flask_marshmallow import Marshmallow
+from flask_jwt_extended import JWTManager
 
 class CRUDMixin(Model):
     """Mixin that adds convenience methods for CRUD (create, read, update, delete) operations."""
@@ -31,6 +33,8 @@ class CRUDMixin(Model):
         db.session.delete(self)
         return commit and db.session.commit()
 
+bcrypt = Bcrypt()
 db = SQLAlchemy(model_class=CRUDMixin)
 ma = Marshmallow()
 migrate = Migrate()
+jwt = JWTManager()

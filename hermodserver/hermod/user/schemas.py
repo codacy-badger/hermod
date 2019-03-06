@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-
 from marshmallow import Schema, fields, pre_load, post_dump
 from hermod.database import ModelSchema
 from .models import *
 
-class QuoteSchema(ModelSchema):
+class UserSchema(ModelSchema):
     class Meta:
-        model = Quote
+        model = User
         # Fields to expose
-        fields = ('body', 'author')
-        strict = True
+        fields = ('username', 'email')
 
-
-quote_schema = QuoteSchema()
-quotes_schema = QuoteSchema(many=True)
+user_schema = UserSchema()
+users_schema = UserSchema(many=True)
