@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/walterjgsp/hermod.svg?branch=master)](https://travis-ci.com/walterjgsp/hermod)
+
 # Hermod
 
 Project Hermod is a project with the sole goal to make a beatifull way and an easy
