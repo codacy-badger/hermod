@@ -9,7 +9,7 @@ class Config(object):
         'sqlite:///' + os.path.join(BASE_DIR, 'hermod.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     BCRYPT_LOG_ROUNDS = 13
-    JWT_SECRET_KEY = 'jwt-secret-string'
+    JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 
 class TestConfig(Config):
     TESTING = True

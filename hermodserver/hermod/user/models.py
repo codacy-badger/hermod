@@ -6,7 +6,7 @@ from hermod.extensions import bcrypt
 class User(SurrogatePK,Model):
     username = Column(db.String(80), unique=True, index=True, nullable=False)
     email = Column(db.String(100), unique=True, nullable=False)
-    password = Column(db.Binary(128), nullable=True)
+    password = Column(db.LargeBinary(128), nullable=True)
     token: str = ''
 
     def __init__(self, username, email, password=None, **kwargs):
