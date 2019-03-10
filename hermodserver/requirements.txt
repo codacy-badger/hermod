@@ -14,7 +14,7 @@ flask_bcrypt
 flask_apispec
 
 # Testing
+pytest>=3.6
 WebTest
-pytest
 factory-boy
 pytest-cov
