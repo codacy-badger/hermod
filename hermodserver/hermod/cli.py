@@ -24,5 +24,5 @@ def register(app):
     def test():
         """Run the tests."""
         import pytest
-        rv = pytest.main([TEST_PATH, '--verbose','--junitxml=pytest-report.xml'])
+        rv = pytest.main([TEST_PATH, '--verbose','--junitxml=pytest-report.xml','--cov=./','hermodserver.py','--cov-report','xml:coverage.xml'])
         exit(rv)
