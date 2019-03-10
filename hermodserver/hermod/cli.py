@@ -24,6 +24,5 @@ def register(app):
     def test():
         """Run the tests."""
         import pytest
-        print(TEST_PATH)
-        rv = pytest.main([TEST_PATH, '--verbose'])
+        rv = pytest.main([TEST_PATH, '--verbose','--junitxml=pytest-report.xml'])
         exit(rv)

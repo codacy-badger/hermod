@@ -14,5 +14,6 @@ before_script:
 script:
   - cd hermodserver
   - flask test
+  - py.test --cov=./ hermodeserver.py --cov-report xml:coverage.xml
   - cd ..
   - sonar-scanner
