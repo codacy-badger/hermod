@@ -9,9 +9,10 @@ addons:
     organization: "walterjgsp-github" # the key of the org you chose at step #3
     token: $SONAR_TOKEN
 before_script:
-  - cd hermodserver
   - export FLASK_APP="hermodserver.py"
   - export FLASK_DEBUG=1
 script:
+  - cd hermodserver
   - flask test
+  - cd ..
   - sonar-scanner
