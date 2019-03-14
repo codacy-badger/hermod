@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from hermod.database import db, Column, Model,SurrogatePK
-from hermod.extensions import bcrypt
+from hermod.extensions import bcrypt, login
 
-class User(SurrogatePK,Model):
+from flask_login import UserMixin
+
+class User(UserMixin,SurrogatePK,Model):
     username = Column(db.String(80), unique=True, index=True, nullable=False)
     email = Column(db.String(100), unique=True, nullable=False)
     password = Column(db.LargeBinary(128), nullable=True)
@@ -35,3 +37,7 @@ class User(SurrogatePK,Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))

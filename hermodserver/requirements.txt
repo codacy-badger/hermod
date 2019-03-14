@@ -12,6 +12,8 @@ PyJWT
 Flask-JWT-Extended
 flask_bcrypt
 flask_apispec
+flask-login
+flask-wtf
 
 # Testing
 pytest>=3.6

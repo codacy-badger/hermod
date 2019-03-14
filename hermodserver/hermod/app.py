@@ -3,7 +3,7 @@ from flask import Flask, current_app
 
 from hermod import home, quote, user
 from hermod.config import Config
-from hermod.extensions import db, migrate, ma, bcrypt, jwt
+from hermod.extensions import db, migrate, ma, bcrypt, jwt, login
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -21,6 +21,7 @@ def register_extensions(app):
     ma.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
+    login.init_app(app)
 
 def register_blueprints(app):
     """Register Flask blueprints."""
