@@ -1,10 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
-        {% if title %}
-        <title>{{ title }} - microblog</title>
-        {% else %}
-        <title>microblog</title>
-        {% endif %}
+        <title>Hermod Dashboard</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/semantic.min.css') }}">
+        
+        <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+
+        <script src="{{url_for('static', filename='js/semantic.min.js')}}"></script>
+
     </head>
     <body>
         <div>
@@ -26,6 +30,7 @@
         </ul>
         {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </body>
 </html>
